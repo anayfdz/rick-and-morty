@@ -2,6 +2,7 @@ import "./styles/App.css";
 import title from "./assets/title.svg";
 import  { Resumen } from './Resumen'
 import { useEffect, useState } from "react";
+import React from "react";
 
 interface Character {
   id: number;
@@ -17,6 +18,7 @@ interface ApiResponse {
 
 function App() {
   const [users, setUsers] = useState<Character[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showCharacters, setShowCharacters] = useState(false);
   const [filter, setFilter] = useState<string | null>(null)
   const fetchUsers = async() => {
@@ -29,6 +31,7 @@ function App() {
       console.log('error en la data de la api', e)
     }
   }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleShowCharacters = async() => {
     setShowCharacters(true);
     fetchUsers();
